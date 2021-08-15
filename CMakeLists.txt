@@ -25,10 +25,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #endif()
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui Qml QuickControls2 Core Quick REQUIRED)
 
 set(PROJECT_SOURCES
-        src/main.cpp
+        main.cpp
         qml.qrc
 )
 
@@ -52,7 +52,8 @@ endif()
 target_compile_definitions(MyTimer
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(MyTimer
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2
+  Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Qml)
 
 set_target_properties(MyTimer PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
