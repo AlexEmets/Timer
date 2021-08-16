@@ -5,14 +5,14 @@ import QtQuick.Layouts 1.5
 
 Button {
    Layout.alignment: Qt.AlignCenter
-   Layout.preferredWidth: 640
-   Layout.preferredHeight: 480/3
-
+   Layout.preferredWidth: 637/3
+   Layout.preferredHeight: 100
+   Layout.fillWidth: true
     background: Rectangle {
             implicitWidth: 100
             implicitHeight: 40
             opacity: enabled ? 1 : 0.3
 
-        }
+   }
 
 }

@@ -18,52 +18,72 @@ ApplicationWindow {
         }
     }
 
-    ColumnLayout{
+    RowLayout{
         spacing: 2
-
+        anchors.fill: parent
         MyButton {
-            Layout.alignment: Qt.AlignCenter
+            id: control
+            Layout.fillWidth: true
             background: Rectangle {
                 radius: 20
+                color:  "#A7FF9D"
+                border.color: "black"
+                border.width: 5
+
+            }
+            onClicked: {
+                console.log("start clicked!")
+            }
+
+            contentItem: Text {
                 color: "green"
-                border.color: "black"
-                border.width: 5
+                text: "start"
+                font.pointSize: 30
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
             }
-            onClicked: {
-                console.log("start clicked!")
-            }
-            text: "start"
         }
 
         MyButton {
-            Layout.alignment:  Qt.AlignCenter
+            Layout.fillWidth: true
             background: Rectangle {
                 border.color: "black"
                 border.width: 5
+                color: "#FF7666"
+                radius: 20
+            }
+
+
+            onClicked: {
+                console.log("start clicked!")
+            }
+            contentItem: Text {
                 color: "red"
-                radius: 20
+                text: "stop"
+                font.pointSize: 30
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
             }
-
-
-            onClicked: {
-                console.log("start clicked!")
-            }
-            text: "stop"
         }
 
         MyButton {
-            Layout.alignment:  Qt.AlignCenter
-            Layout.fillHeight: true
+
             background: Rectangle {
+                color: "#9286A5"
                 border.color: "black"
                 border.width: 5
-                color: "black"
                 radius: 20
             }
 
-            text: "reset"
             onClicked: {
                 console.log("start clicked!")
+            }
+            contentItem: Text {
+                color: "blue"
+                text: "reset"
+                font.pointSize: 30
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
             }
         }
     }
