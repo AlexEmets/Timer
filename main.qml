@@ -7,7 +7,7 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Timer")
     RowLayout {
         Button {
             id: control1
@@ -33,7 +33,7 @@ Window {
         }
         Button {
             id: control2
-            text: qsTr("Finish")
+            text: qsTr("Stop")
 
             contentItem: Text {
                 text: control2.text
