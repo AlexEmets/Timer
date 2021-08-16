@@ -17,7 +17,25 @@ ApplicationWindow {
             GradientStop { position: 0; color: "#6699ff" }
         }
     }
+    menuBar: MenuBar {
 
+           Menu {
+
+               title: qsTr("&View")
+                Action { text: qsTr("&Dark mode") }
+           }
+           Menu {
+
+               title: qsTr("&Edit")
+
+           }
+           Menu {
+
+               title: qsTr("&Help")
+               Action { text: qsTr("&About") }
+
+           }
+       }
     RowLayout{
         spacing: 2
         anchors.fill: parent
@@ -37,7 +55,7 @@ ApplicationWindow {
 
             contentItem: Text {
                 color: "green"
-                text: "start"
+                text: "START"
                 font.pointSize: 30
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -59,7 +77,7 @@ ApplicationWindow {
             }
             contentItem: Text {
                 color: "red"
-                text: "stop"
+                text: "STOP"
                 font.pointSize: 30
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -74,13 +92,12 @@ ApplicationWindow {
                 border.width: 5
                 radius: 20
             }
-
             onClicked: {
                 console.log("start clicked!")
             }
             contentItem: Text {
                 color: "blue"
-                text: "reset"
+                text: "RESET"
                 font.pointSize: 30
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
