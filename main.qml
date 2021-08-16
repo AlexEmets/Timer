@@ -1,7 +1,8 @@
+
 import QtQuick 2.12
 import QtQuick.Window 2.12
-import QtQuick.Controls 2.5
-import QtQuick.Layouts 1.5
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 
 ApplicationWindow {
     id:win
@@ -16,37 +17,54 @@ ApplicationWindow {
             GradientStop { position: 0; color: "#6699ff" }
         }
     }
-    menuBar: MenuBar {
-            Menu {
-                title: qsTr("&Settings")
-                Action { text: qsTr("&New...") }
-                Action { text: qsTr("&Open...") }
-                Action { text: qsTr("&Save") }
-                Action { text: qsTr("Save &As...") }
-                MenuSeparator { }
-                Action { text: qsTr("&Quit") }
-            }
-            Menu {
-                title: qsTr("&View")
-                Action { text: qsTr("Cu&t") }
-                Action { text: qsTr("&Copy") }
-                Action { text: qsTr("&Paste") }
-            }
-            Menu {
-                title: qsTr("&Help")
-                Action { text: qsTr("&About") }
-            }
-        }
-    RowLayout {
+
+    ColumnLayout{
+        spacing: 2
+
         MyButton {
-            id: control1
-            text: "Start"
-            onClicked: {
-                console.log("ls")
+            Layout.alignment: Qt.AlignCenter
+            background: Rectangle {
+                radius: 20
+                color: "green"
+                border.color: "black"
+                border.width: 5
             }
-
+            onClicked: {
+                console.log("start clicked!")
+            }
+            text: "start"
         }
 
+        MyButton {
+            Layout.alignment:  Qt.AlignCenter
+            background: Rectangle {
+                border.color: "black"
+                border.width: 5
+                color: "red"
+                radius: 20
+            }
 
+
+            onClicked: {
+                console.log("start clicked!")
+            }
+            text: "stop"
+        }
+
+        MyButton {
+            Layout.alignment:  Qt.AlignCenter
+            Layout.fillHeight: true
+            background: Rectangle {
+                border.color: "black"
+                border.width: 5
+                color: "black"
+                radius: 20
+            }
+
+            text: "reset"
+            onClicked: {
+                console.log("start clicked!")
+            }
+        }
     }
 }
