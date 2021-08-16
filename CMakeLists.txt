@@ -26,30 +26,22 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
     )
 else()
-    if(ANDROID)
-        add_library(MyTimer SHARED
-            ${PROJECT_SOURCES}
-        )
-    else()
-        add_executable(MyTimer
-          ${PROJECT_SOURCES}
-        )
-    endif()
+    add_executable(MyTimer
+      ${PROJECT_SOURCES}
+    )
 endif()
 
 target_compile_definitions(MyTimer
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+
 target_link_libraries(MyTimer
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2
-  Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Qml)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core
+  Qt${QT_VERSION_MAJOR}::Quick
+  Qt${QT_VERSION_MAJOR}::QuickControls2
+  Qt${QT_VERSION_MAJOR}::Gui
+  Qt${QT_VERSION_MAJOR}::Qml
+  )
 
-set_target_properties(MyTimer PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-)
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_import_qml_plugins(MyTimer)
-    qt_finalize_executable(MyTimer)
-endif()
+
+
