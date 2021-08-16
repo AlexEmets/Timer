@@ -1,4 +1,0 @@
-/home/oleksandr/MyTimer/build/CMakeFiles/rebuild_cache.dir
-/home/oleksandr/MyTimer/build/CMakeFiles/MyTimer.dir
-/home/oleksandr/MyTimer/build/CMakeFiles/edit_cache.dir
-/home/oleksandr/MyTimer/build/CMakeFiles/MyTimer_autogen.dir
