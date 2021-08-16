@@ -17,7 +17,7 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui Qml QuickControls2 Core Quick 
 
 set(PROJECT_SOURCES
         main.cpp
-        qml.qrc
+        resources.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
