@@ -4,10 +4,12 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.5
 
 Button {
-   Layout.alignment: Qt.AlignCenter
+
+   Layout.alignment: Qt.AlignBottom
    Layout.preferredWidth: 637/3
    Layout.preferredHeight: 100
    Layout.fillWidth: true
+
     background: Rectangle {
             implicitWidth: 100
             implicitHeight: 40
