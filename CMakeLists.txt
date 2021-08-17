@@ -16,7 +16,8 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui Qml QuickControls2 Core Quick REQUIRED)
 
 set(PROJECT_SOURCES
-        main.cpp
+        src/main.cpp
+        src/timer.cpp
         resources.qrc
 )
 

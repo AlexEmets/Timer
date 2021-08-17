@@ -3,6 +3,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.5
+import MyOwnTimer 1.0
 
 ApplicationWindow {
     id:win
@@ -10,6 +11,10 @@ ApplicationWindow {
     height: 500
     visible: true
     title: qsTr("Timer")
+
+    Timer {
+        id: timer
+    }
 
     background: Rectangle {
         gradient: Gradient {
@@ -126,6 +131,7 @@ ApplicationWindow {
             }
             onClicked: {
                 console.log("start clicked!")
+                timer.start
             }
 
             contentItem: Text {
