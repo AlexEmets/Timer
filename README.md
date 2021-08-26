@@ -1,5 +1,4 @@
 # Timer
-Simple timer application using Qt framework 
 
 ## Task Description
 You need to implement a timer graphical desktop application using Qt framework and QML.

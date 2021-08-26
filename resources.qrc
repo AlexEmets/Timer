@@ -1,6 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-	<file>qml/MyButton.qml</file>
+        <file>qml/MyButton.qml</file>
+        <file>sound/beep.wav</file>
+        <file>sound/ticking.wav</file>
+        <file>sound/beep2.wav</file>
     </qresource>
 </RCC>
+
